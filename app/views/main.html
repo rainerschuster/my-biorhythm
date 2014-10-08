@@ -1,0 +1,29 @@
+<div class="row">
+    <div ng-controller="FlotCtrl">
+		<!-- small spacer -->
+		<div>&nbsp;</div>
+        <!--<flot dataset="myData" options="myChartOptions" height="480px"></flot>-->
+
+		<form name="form" role="form" ng-submit="update(dt)">
+		  <div class="form-group">
+			<label>Birthday</label>
+			<div class="input-group">
+			  <input id="birthday" name="birthday" type="text" class="form-control" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" />
+			  <span class="input-group-btn">
+				<button type="button" class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+			  </span>
+			</div>
+		  </div>
+		  <button type="submit" ng-disabled="form.$invalid" class="btn btn-primary">
+			<span class="glyphicon glyphicon-ok-sign"></span> Calculate
+		  </button>
+		</form>
+		<div ng-show="!first">
+		  <hr/>
+		  <div id="myChart" style="width:100%;height:300px;"></div>
+		  <!--<button type="button" class="btn btn-default" ng-click="update(dt)">Update</button>
+		  <button type="button" class="btn btn-default" ng-click="toToday()">Today</button>-->
+		</div>
+		<!-- small spacer -->
+		<div>&nbsp;</div>
+    </div>
